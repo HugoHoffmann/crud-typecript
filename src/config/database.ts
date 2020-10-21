@@ -1,13 +1,19 @@
-require('dotenv/config');
+import { Empresa } from "../models/empresa.model";
+import { EmpresaFuncionario } from "../models/empresaFuncionario.model";
+import { Funcionario } from "../models/funcionario.model";
+import { Sequelize } from "sequelize-typescript";
 
-module.exports = {
-  dialect: 'postgres',
-  host: process.env.DB_HOST,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT,
-  define: {
-    timestamps: true,
-  },
-};
+const sequelize = new Sequelize({
+  database: 'crud',
+  dialect: "postgres",
+  username: 'postgres',
+  password: 'postgres',
+  logging: false
+});
+
+sequelize.addModels([Funcionario, Empresa, EmpresaFuncionario]);
+
+sequelize.sync({
+  alter: true
+})
+export default sequelize
