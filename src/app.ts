@@ -1,7 +1,7 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
-import { FuncionarioRoutes } from "./routes/funcionario";
-import { EmpresaRoutes } from "./routes/empresa";
+import { FuncionarioRoutes } from "./routes/funcionarioRoutes";
+import { EmpresaRoutes } from "./routes/empresaRoutes";
 
 class App {
   public app: express.Application;
