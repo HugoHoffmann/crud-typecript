@@ -2,6 +2,7 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import { FuncionarioRoutes } from "./routes/funcionarioRoutes";
 import { EmpresaRoutes } from "./routes/empresaRoutes";
+import sequelize from "./config/database";
 
 export class App {
   public app: express.Application;
@@ -11,6 +12,7 @@ export class App {
   constructor() {
     this.app = express();
     this.config();
+    sequelize.authenticate()
     this.routesFuncionario = new FuncionarioRoutes();
     this.routesEmpresa = new EmpresaRoutes();
     this.routesFuncionario.routes(this.app);

@@ -14,6 +14,6 @@ const sequelize = new Sequelize({
 sequelize.addModels([Funcionario, Empresa, EmpresaFuncionario]);
 
 sequelize.sync({
-  force: true
+  alter: true
 })
 export default sequelize
