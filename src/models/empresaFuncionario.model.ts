@@ -10,7 +10,9 @@ import {
 import { Empresa } from "./empresa.model";
 import { Funcionario } from "./funcionario.model";
 
-@Table
+@Table({
+  tableName: 'empresa_funcionario'
+})
 export class EmpresaFuncionario extends Model<EmpresaFuncionario> {
   @PrimaryKey
   @AutoIncrement
