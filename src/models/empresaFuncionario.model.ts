@@ -5,13 +5,14 @@ import {
   ForeignKey,
   PrimaryKey,
   Table,
-  Model
+  Model,
+  DeletedAt,
 } from "sequelize-typescript";
 import { Empresa } from "./empresa.model";
 import { Funcionario } from "./funcionario.model";
 
 @Table({
-  tableName: 'empresa_funcionario'
+  tableName: "empresa_funcionario",
 })
 export class EmpresaFuncionario extends Model<EmpresaFuncionario> {
   @PrimaryKey
@@ -26,4 +27,7 @@ export class EmpresaFuncionario extends Model<EmpresaFuncionario> {
   @ForeignKey(() => Empresa)
   @Column(DataType.INTEGER)
   empresaId: number;
+
+  @DeletedAt
+  deletedAt: Date;
 }

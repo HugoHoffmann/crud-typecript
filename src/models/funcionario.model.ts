@@ -7,12 +7,13 @@ import {
   PrimaryKey,
   AutoIncrement,
   DataType,
+  DeletedAt,
 } from "sequelize-typescript";
 import { EmpresaFuncionario } from "./empresaFuncionario.model";
 import { Empresa } from "./empresa.model";
 
 @Table({
-  tableName: 'funcionario'
+  tableName: "funcionario",
 })
 export class Funcionario extends Model<Funcionario> {
   @PrimaryKey
@@ -35,6 +36,9 @@ export class Funcionario extends Model<Funcionario> {
   @AllowNull(false)
   @Column(DataType.STRING)
   endereco!: string;
+
+  @DeletedAt
+  deletedAt: Date;
 
   @BelongsToMany(() => Empresa, () => EmpresaFuncionario)
   empresas: Array<Empresa & { EmpresaFuncionario: EmpresaFuncionario }>;
