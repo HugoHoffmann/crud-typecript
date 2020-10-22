@@ -8,5 +8,5 @@ export class FuncionarioDto {
   public endereco: string;
   public empresaId?: number;
 
-  public empresas: EmpresaDto[];
+  public empresas: number[];
 }
