@@ -69,16 +69,6 @@ export class FuncionarioService {
     funcionario: Partial<FuncionarioDto> & { id: number },
     transaction?: Transaction
   ): Promise<boolean> {
-    // if(funcionario.empresaId){
-    //   const empresa = await this.empresaModel.findByPk(
-    //     funcionario.empresaId
-    //   );
-    //   if (empresa) {
-
-    //   } else {
-    //     throw new Error("Empresa informada não existe");
-    //   }
-    // }
     const { id } = funcionario;
     const result = await this.funcionarioModel.update(funcionario, {
       transaction,
@@ -91,6 +81,13 @@ export class FuncionarioService {
   }
 
   public async delete(id: number, transaction?: Transaction): Promise<void> {
+
+    await this.empresaFuncionarioModel.destroy({
+      transaction,
+      where: {
+        funcionarioId: id,
+      },
+    });
     await this.funcionarioModel.destroy({
       transaction,
       where: {
