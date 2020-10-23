@@ -13,6 +13,7 @@
     "@types/node": "^14.11.10",
     "@types/validator": "^13.1.0",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "pg": "^8.4.1",
     "reflect-metadata": "^0.1.13",
@@ -20,6 +21,7 @@
     "sequelize-typescript": "^1.1.0"
   },
   "devDependencies": {
-    "@types/sequelize": "^4.28.9"
+    "@types/sequelize": "^4.28.9",
+    "nodemon": "^2.0.6"
   }
 }
