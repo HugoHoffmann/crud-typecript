@@ -70,10 +70,10 @@ Cria um novo funcionário.
 Necessário enviar um JSON conforme exemplo:
 ```json
 {
-  "nome": "Tiago",
-	"cpf": "800.778.540-04",
-	"email": "tiago@hotmail.com",
-  "endereco": "Palhoça - SC"
+   "nome": "Tiago",
+   "cpf": "800.778.540-04",
+   "email": "tiago@hotmail.com",
+   "endereco": "Palhoça - SC"
 }
 ```
 
@@ -134,7 +134,7 @@ Cria uma nova empresa.
 Necessário enviar um JSON conforme exemplo:
 ```json
 {
-	"cnpj": "39.606.617/0001-90",
+  "cnpj": "39.606.617/0001-90",
   "endereco": "Palhoça - SC",
 }
 ```
