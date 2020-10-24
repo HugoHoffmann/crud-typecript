@@ -13,8 +13,17 @@ Crie um .env de acordo com o .env.example com as configurações do banco de dad
 
 ## Start
 
+### Usando docker
+
+
 ```sh
-yarn prod 
+./run.sh
+```
+
+### Ou manualmente
+
+```sh
+yarn prod
 ```
 
 ## Rotas
