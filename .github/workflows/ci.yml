@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -38,6 +38,6 @@ jobs:
           git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
       - name: Deploy para Heroku
         run: |
-          git push heroku HEAD:master -f
+          git push heroku HEAD:main -f
 
 # secrets.HEROKU_API_KEY deve ser configurado no github em configurações e secrets
