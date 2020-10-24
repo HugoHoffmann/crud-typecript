@@ -6,6 +6,7 @@ import {config} from 'dotenv'
 
 config()
 const sequelize = new Sequelize({
+  host: process.env.DB_HOST,
   database: process.env.DB_NAME,
   dialect: "postgres",
   username: process.env.DB_USER,
