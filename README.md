@@ -14,7 +14,7 @@ Crie um .env de acordo com o .env.example com as configurações do banco de dad
 ## Start
 
 ```sh
-yarn dev ou yarn prod 
+yarn prod 
 ```
 
 ## Rotas
